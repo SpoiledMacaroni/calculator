@@ -78,7 +78,7 @@ function evaluate() {
     operate(currentOperation, firstOperand, secondOperand)
   )
   lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`
-  currentOperation = null
+  currentOperation = null 
 }
 
 function roundResult(number) {
