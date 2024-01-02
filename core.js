@@ -74,16 +74,19 @@ function evaluate() {
     return
   }
   secondOperand = currentOperationScreen.textContent
+
   currentOperationScreen.textContent = roundResult(
     operate(currentOperation, firstOperand, secondOperand)
   )
+  
   lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`
   currentOperation = null 
   shouldResetScreen = true
 }
 
 function roundResult(number) {
-  return Math.round(number * 1000) / 1000
+  if (number.toString().length <= 9) {return (Math.round(number * 1000) / 1000);} 
+  else return(number.toExponential(3))
 }
 
 function handleKeyboardInput(e) {
